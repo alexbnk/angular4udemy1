@@ -1,0 +1,19 @@
+<div class="network component">
+
+
+<div class="row" style="vertical-align: middle;">
+
+<div class="col-sm-6 flexbox">
+  <h3>Network</h3>
+</div>
+<div class="col-sm-6 flexbox" >
+  <button type="btn btn-primary pull-right" name="button" (click)="toggle()">Scan Network</button>
+</div>
+</div>
+<hr>
+<app-hosts *ngIf="showButton"> </app-hosts>
+
+<button class="btn btn-success" type="button" name="button" [disabled]="showButton">Check </button>
+{{showButton}}
+
+<app-hosts *ngFor="let host of hosts"></app-hosts>

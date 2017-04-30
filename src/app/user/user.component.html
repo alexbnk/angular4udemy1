@@ -1,0 +1,38 @@
+<div class="box component" [ngClass]="{dark: isClicked}">
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <label>Username {{username.length}}</label>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <input type="text" class="form-control" [(ngModel)]="username" maxlength="30" minlength="6">
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-info in" type="button" name="button" [disabled]="!username" (click)="resetInput()">Reset User</button>
+    </div>
+
+  <div class="col-md-4">
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="progress" style="height: 5px; margin: 10px;">
+        <div class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width: (100/6)*username.length+'%'}">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<hr>
+<button class="btn btn-danger" type="button" (click)="isClicked=!isClicked">
+Change component class {{isClicked}}
+</button>
+
+
+</div>

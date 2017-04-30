@@ -1,0 +1,12 @@
+<p class="box component">
+  host: <b>router</b>
+    ip: <b>192.168.1.1</b>
+     ha: <b>4c:17:eb:e7:76:d2</b>
+     <i class="glyphicon glyphicon-circle-arrow-down pull-right" (click)="clickDetails()" [ngClass]="{'alert-danger' : showDetails}">
+     </i>
+     <app-details *ngIf="showDetails"></app-details>
+
+</p>
+<span  *ngFor="let l of log; let z=index">
+  <div class="alert" [ngClass]="{'alert-danger': z>4}">{{z}} - {{l.time}} - {{l.text}}</div>
+</span>

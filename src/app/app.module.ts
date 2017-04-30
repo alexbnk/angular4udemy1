@@ -4,10 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { NetworkComponent } from './network/network.component';
+import { HostsComponent } from './hosts/hosts.component';
+import { AlertComponent } from './alert/alert.component';
+import { UserComponent } from './user/user.component';
+import { RestorationComponent } from './restoration/restoration.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NetworkComponent,
+    HostsComponent,
+    AlertComponent,
+    UserComponent,
+    RestorationComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
