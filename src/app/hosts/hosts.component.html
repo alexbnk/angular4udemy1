@@ -1,12 +1,33 @@
-<p class="box component">
-  host: <b>router</b>
-    ip: <b>192.168.1.1</b>
-     ha: <b>4c:17:eb:e7:76:d2</b>
-     <i class="glyphicon glyphicon-circle-arrow-down pull-right" (click)="clickDetails()" [ngClass]="{'alert-danger' : showDetails}">
-     </i>
-     <app-details *ngIf="showDetails"></app-details>
+<div class="box component" *ngFor="let host of hosts">
+  <div class="row">
+    <div class="col-md-1" style="border-right: 1px solid silver; padding: auto">
+      <img src="{{host.iconUrl}}" alt="{{host.type}}" style="width: 35px;">
+    </div>
+    <div class="col-md-10  pull-left">
+      host: <b>{{host.name}}</b> ip: <b>{{host.ip}}</b> ha: <b>{{host.ha}}</b> roles: <b>{{host.roles}}</b>
+      <br> location: <b>{{host.location}}</b>
+    </div>
+    <div class="col-md-1">
+      <i class="glyphicon glyphicon-circle-arrow-down pull-right" (click)="clickDetails()" [ngClass]="{'alert-danger' : showDetails}">
+         </i>
+    </div>
+  </div>
+  <div class="row" *ngIf="showDetails">
+  <div class="col-md-12">
+    <app-details ></app-details>
+  </div>
 
-</p>
-<span  *ngFor="let l of log; let z=index">
-  <div class="alert" [ngClass]="{'alert-danger': z>4}">{{z}} - {{l.time}} - {{l.text}}</div>
-</span>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<span *ngFor="let l of log; let z=index">
+  <div class="alert alert-dismissible" role="alert" [ngClass]="{'alert-danger': z>4}">{{z}} - {{l.time}} - {{l.text}}</div>

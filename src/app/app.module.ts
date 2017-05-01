@@ -10,6 +10,9 @@ import { AlertComponent } from './alert/alert.component';
 import { UserComponent } from './user/user.component';
 import { RestorationComponent } from './restoration/restoration.component';
 import { DetailsComponent } from './details/details.component';
+import { HeaderComponent } from './header/header.component';
+import { HostComponent } from './hosts/host/host.component';
+import { HostEditComponent } from './hosts/host-edit/host-edit.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { DetailsComponent } from './details/details.component';
     AlertComponent,
     UserComponent,
     RestorationComponent,
-    DetailsComponent
+    DetailsComponent,
+    HeaderComponent,
+    HostComponent,
+    HostEditComponent
   ],
   imports: [
     BrowserModule,
